@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
 import { useHistory } from 'react-router';
 
-const MapPage: React.FC = () => {
+const MapPage = () => {
   const history = useHistory();
   const handleMoveHome = () => {
     history.push('/home');
