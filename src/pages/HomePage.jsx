@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import { IonContent, IonHeader, IonPage, IonButton } from '@ionic/react';
-import { useHistory } from 'react-router';
+import { IonContent, IonHeader, IonPage } from '@ionic/react';
 import Map from '../components/Map';
 import InputForm from '../components/InputForm';
 
