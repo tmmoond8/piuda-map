@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.3.0",
     "@ionic/react": "^5.5.0",
     "@ionic/react-router": "^5.5.0",
+    "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "ionicons": "^5.4.0",
     "react": "^17.0.1",

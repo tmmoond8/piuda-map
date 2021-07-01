@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { RenderAfterNavermapsLoaded, NaverMap } from 'react-naver-maps';
 import dotenv from 'dotenv';
@@ -6,6 +6,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const Map = () => {
+  const [zoom, setZoom ] = useState(0);
+  
+  useEffect(() => {
+    setZoom(10);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, 50);
+
   return (
     <Wrapper>
       <RenderAfterNavermapsLoaded
@@ -20,7 +27,7 @@ const Map = () => {
           height: '100%',
         }}
         defaultCenter={{ lat: 37.3595704, lng: 127.105399 }}
-        defaultZoom={10}
+        defaultZoom={zoom}
       />
     </RenderAfterNavermapsLoaded>
   </Wrapper>
