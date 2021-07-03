@@ -1,12 +1,12 @@
-#[functions]
+[functions]
   # Directory with serverless functions, including background functions,
   # to deploy. This is relative to the base directory if one has been set, 
   # or the root directory if a base hasn’t been set.
-#directory = "lambda/"
+directory = "lambda/"
 
 [build]
   command = "npm run build:netlify"
-  #functions = "lambda"
+  functions = "lambda"
   publish = "build"
 
 [[redirects]]
