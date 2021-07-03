@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styled from '@emotion/styled';
-import { IonHeader, IonToolbar, IonInput, IonButton, IonList, IonItem } from '@ionic/react';
+import { IonHeader, IonToolbar, IonInput, IonButton, IonList, IonItem} from '@ionic/react';
+import API from '../api';
+import { HomeContext } from '../pages/HomePage';
+
 
 const InputForm = () => {
-
-  const [departure, setDeparture] = useState("");
-  const [arrival, setArrval ] = useState("");
+  const { departureInput, arrivalInput, setDepartureInput, setArrivalInput, setDeparture, setArrival }  = useContext(HomeContext);
 
   return (
     <IonHeader>
@@ -13,10 +14,18 @@ const InputForm = () => {
         <Form>
           <IonList>
             <IonItem>
-              <IonInput value={departure} placeholder="Enter Departure" onIonChange={e => setDeparture(e.detail.value)}></IonInput>
+              <IonInput 
+                value={departureInput} 
+                placeholder="Enter Departure" 
+                onIonChange={e => setDepartureInput(e.detail.value)}
+              />  
             </IonItem>
             <IonItem>
-              <IonInput value={arrival} placeholder="Enter Arrival" onIonChange={e => setArrval(e.detail.value)}></IonInput>
+              <IonInput 
+                value={arrivalInput} 
+                placeholder="Enter Arrival" 
+                onIonChange={e => setArrivalInput(e.detail.value)}
+              />
             </IonItem>
           </IonList>
           <IonButton>

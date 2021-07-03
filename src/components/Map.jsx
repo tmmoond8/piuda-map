@@ -7,18 +7,22 @@ dotenv.config();
 
 const Map = () => {
   const [zoom, setZoom ] = useState(0);
-  
   useEffect(() => {
     setZoom(10);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, 50);
+    const timer = setTimeout(() => {
+      // setZoom(10);
+    }, 300)
+    
+    return timer;
+  }, []);
 
   return (
     <Wrapper>
       <RenderAfterNavermapsLoaded
-        ncpClientId={process.env.REACT_APP_NAVER_CLIENT_ID} 
+        ncpClientId={process.env.REACT_APP_NAVER_CLOUD_CLIENT_ID} 
         error={<p>Maps Load Error</p>}
         loading={<p>Maps Loading...</p>}
+        submodules={["geocoder"]}
       >
       <NaverMap 
         mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
@@ -27,17 +31,15 @@ const Map = () => {
           height: '100%',
         }}
         defaultCenter={{ lat: 37.3595704, lng: 127.105399 }}
-        defaultZoom={zoom}
+        defaultZoom={10}
       />
+      
     </RenderAfterNavermapsLoaded>
   </Wrapper>
   )
 }
 
 export default Map;
-
-
-
 
 const Wrapper = styled.div`
   display: flex;
