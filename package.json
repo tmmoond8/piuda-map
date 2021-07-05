@@ -38,7 +38,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:netlify": "netlify-lambda serve",
+    "start:netlify": "netlify-lambda serve src/functions",
     "build": "react-scripts build",
     "build:lambda": "netlify-lambda install && netlify-lambda build src/functions",
     "build:netlify": "npm run build && npm run build:lambda",
@@ -64,6 +64,12 @@
   },
   "devDependencies": {
     "@capacitor/cli": "3.0.2",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "netlify-lambda": "^2.0.10"
   },
   "description": "An Ionic project"
